@@ -16,12 +16,11 @@ pip install z3-solver
 ```
 python satcheck.py
 ```
-2- Type a valid formula according to the syntax, the file Examples contain a list of formulas one can copy and paste, example:
+2- Type a valid formula according to the syntax, such as:
 
 ```
 O open {[0,7],[12,inf]} & (O Load {[3,27]} || F complain {[2,200]})
 ```
-
 
 ## Syntax :
 Norm ::=  O Action IS  , F Action Is , Norm  & Norm, Norm  || Norm
@@ -37,4 +36,40 @@ inf ::= $+\infty$
 & is for conjunction 
 
 || is for disjunction
+
+## More examples can be found in Examples file:
+
+Paper example:
+```
+(O dag {[9,16]} || O dap {[9,inf]}) &  F dap {[12,24]} & F dag {[10,14]}
+```
+Ontic conflict example:
+```
+O read {[1,2]} & O write {[1,2]} & O erase {[1,2]}
+```
+
+Deontic conflict example:
+```
+O open {[4,6],[12,15]} & F open {[0,20]}
+```
+2 occurance of the same action for 2 obligations on the same action:
+```
+O open {[4,6],[12,15]} & O open {[100,25]}
+```
+
+1 occurrence is enough for two obligations:
+```
+O open {[4,6],[12,15]} & O open {[0,25]}
+```
+
+Infinity intervals:
+```
+O open {[0,inf]} & F open {[2,inf]}
+```
+
+ Complex example:
+ ```
+(O read {[1,2]} || F write {[0,199]} || O erase {[0,8]} ) &  (F read {[0,16]} || O write {[100,250]} || F erase {[0,70]}) & (O read {[15,28]} || O write {[39,50],[78,100]} || O erase {[10,15]})
+```
+
 
