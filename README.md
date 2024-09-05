@@ -27,7 +27,7 @@ Norm ::=  O Action IS  , F Action Is , Norm  & Norm, Norm  || Norm
 
 Action ::=  String 
 
-I ::= [Int,Int] | [Int,inf] $~~~~~~~~~~(Interval)$
+I ::= [Int,Int] , [Int,inf] $~~~~~~~~~~(Interval)$
 
 Is ::= \{I, ..., I\} $~~~~~~~~~~\quad\quad(Interval Set )$
 
