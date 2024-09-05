@@ -31,11 +31,11 @@ I ::= [Int,Int] | [Int,inf] $~~~~~~~~~~(Interval)$
 
 Is ::= \{I, ..., I\} $~~~~~~~~~~\quad\quad(Interval Set )$
 
-inf ::= $+\infty$
+inf ($+\infty$)
 
-& is for conjunction 
+&  (Conjunction) 
 
-|| is for disjunction
+|| (disjunction)
 
 ## More examples can be found in Examples file:
 
@@ -52,7 +52,7 @@ Deontic conflict example:
 ```
 O open {[4,6],[12,15]} & F open {[0,20]}
 ```
-2 occurance of the same action for 2 obligations on the same action:
+2 occurrences of the same action for 2 obligations on the same action:
 ```
 O open {[4,6],[12,15]} & O open {[100,25]}
 ```
